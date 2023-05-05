@@ -1,8 +1,22 @@
 [package]
 name = "backend"
-version = "0.1.0"
+version = "0.0.1"
 edition = "2021"
+
+publish = false
+license = "MIT"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+actix-web = "4.3.1"
+anyhow = "1.0.71"
+diesel = "2.0.4"
+env_logger = "0.10.0"
+log = "0.4.17"
+serde = "1.0.162"
+serde_json = "1.0.96"
+serde_toml = "0.0.1"
+serde_yaml = "0.9.21"
+syslog = "6.1.0"
+thiserror = "1.0.40"
