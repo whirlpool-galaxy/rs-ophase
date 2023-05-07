@@ -12,6 +12,29 @@
 
 </div>
 
+## Development
+
+### Database
+
+- [DBeaver Database Tool](https://dbeaver.io/)
+- [sqlx-cli](https://crates.io/crates/sqlx-cli) `cargo install sqlx-cli`
+
+### Setup Dev DB
+
+```sql
+CREATE OR REPLACE DATABASE <DBNAME> DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+GRANT ALL PRIVILEGES ON <DBNAME>.* TO <USER>@"localhost" WITH GRANT OPTION;
+```
+
+```bash
+export DATABASE_URL=mysql://<USER>:<PASSWD>@localhost/<DBNAME>
+sqlx setup
+```
+
+## DB-ER
+
+![DB-ER](./doc/assets/db_er_000.png)
+
 ## Project Structure
 
 **backend**  
