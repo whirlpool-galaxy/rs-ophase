@@ -9,14 +9,17 @@ license = "MIT"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+common = {path = "../common/"}
+
 actix-web = "4.3.1"
 anyhow = "1.0.71"
-diesel = "2.0.4"
 env_logger = "0.10.0"
 log = "0.4.17"
 serde = "1.0.162"
 serde_json = "1.0.96"
 serde_toml = "0.0.1"
 serde_yaml = "0.9.21"
+sqlx = {version = "0.6.3", features = ["runtime-actix-rustls", "mysql", "macros","migrate", "uuid", "chrono", "time", "offline"]}
 syslog = "6.1.0"
 thiserror = "1.0.40"
+tokio = {version = "1.28.0", features = ["full"]}

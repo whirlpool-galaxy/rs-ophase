@@ -1,4 +1,6 @@
-/target
+**/target
 
 .vscode/
 *.code-workspace
+
+.env

@@ -3,6 +3,5 @@
 members = [
     "backend",
     "frontend",
-    "common_api",
-    "logic",
+    "common",
 ]
