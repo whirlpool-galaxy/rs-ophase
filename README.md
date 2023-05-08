@@ -30,8 +30,10 @@ Install [rust-lang](https://www.rust-lang.org/learn/get-started):
 ### Setup Dev DB
 
 ```sql
-CREATE OR REPLACE DATABASE <DBNAME> DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-GRANT ALL PRIVILEGES ON <DBNAME>.* TO <USER>@"localhost" WITH GRANT OPTION;
+CREATE USER IF NOT EXISTS '<USER>'@'localhost' IDENTIFIED BY '<PASSWD>';
+CREATE OR REPLACE DATABASE `<DBNAME>` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+GRANT ALL PRIVILEGES ON `<DBNAME>`.* TO '<USER>'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
 ```
 
 ```bash
