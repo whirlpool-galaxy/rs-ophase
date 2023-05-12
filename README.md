@@ -14,20 +14,21 @@
 
 ## Development
 
-Create a `./.env` File:
-
-    DATABASE_URL="mysql://<USER>:<PASSWD>@localhost/<DBNAME>"
-
 Install [rust-lang](https://www.rust-lang.org/learn/get-started):
 
 `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+
+### backend
+
+`cargo install cargo-watch`  
+`cargo watch -x run`
 
 ### Database
 
 - [DBeaver Database Tool](https://dbeaver.io/)
 - [sqlx-cli](https://crates.io/crates/sqlx-cli) `cargo install sqlx-cli`
 
-### Setup Dev DB
+### Setup MySQL/MariaDB
 
 ```sql
 CREATE USER IF NOT EXISTS '<USER>'@'localhost' IDENTIFIED BY '<PASSWD>';
@@ -36,13 +37,21 @@ GRANT ALL PRIVILEGES ON `<DBNAME>`.* TO '<USER>'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 ```
 
+Create a `./.env` file for MySQL/MariaDB:
+
+    DATABASE_URL="mysql://<USER>:<PASSWD>@localhost/<DBNAME>"
+
+or for SQLite:
+
+    DATABASE_URL="sqlite:dev.sqlite"
+
+that run
+
 ```bash
-# export DATABASE_URL=mysql://<USER>:<PASSWD>@localhost/<DBNAME>
-# or use .env file
 sqlx setup
 ```
 
 ## DB-ER
 
-![DB-ER](./doc/assets/db_er_000.png)
+![DB-ER](./docs/assets/db_er_000.png)
 
